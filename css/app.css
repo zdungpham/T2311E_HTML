@@ -1,0 +1,21 @@
+h1{
+    color: #980c0c;
+}
+body{
+    background-image: url('../images/evan.jfif');
+    background-size: cover;
+}
+p{
+    color: #1cd8cb;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left; /* left / center / justify / right */
+    text-decoration: none;/* underline / line-through / overline /none*/
+    text-transform: capitalize /* uppercase / lowercase / capitalize / none*/;
+    font-weight: 400; /* 100-thin 200-semi-light 300-light 400-normal 500-medium
+        600-semibold 700-bold 800-extrabold 900-black */
+    /*background-color: rgb(217, 234, 226);
+    width: 600px;
+    border-bottom: 1px solid #821139;*/
+}
