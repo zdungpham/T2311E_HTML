@@ -10,7 +10,7 @@ p{
     font-size: 16px;
     line-height: 1.5;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: left; /* left / center / justify / right */
+    text-align: left; /* left / center / justify / right */ 
     text-decoration: none;/* underline / line-through / overline /none*/
     text-transform: capitalize /* uppercase / lowercase / capitalize / none*/;
     font-weight: 400; /* 100-thin 200-semi-light 300-light 400-normal 500-medium
