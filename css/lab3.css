@@ -2,26 +2,31 @@ div{
     float: left;
 }
 .box1{
-width: calc(33.34%);
+width: calc(33.34% - 200px);
 color: white;
 background-image: url(../images/backgroundlab3.jpg) ;
 background-size: cover;
+padding: 50px 100px 0;
 
 }
-h2{
+.box1 h2{
     color: yellow;
-    border-bottom: 1px white;
+    border-bottom: 3px solid rgb(255, 255, 255);
 }
 .box2{
-width: calc(100% - 33.34% - 200px );
+width: calc(100% - 33.34% - 300px );
 margin: 5px 50px;
-padding: 5px 50px;
+padding: 5px 100px;
 }
 .box1 img{
 max-width: 100%;
-border-radius: 75%;
+border-radius: 50%;
 }
 .about-me{
     font-size: 20px;
-    border-bottom: 1px gray;
+    border-bottom: 3px solid  gray;
+    
+}
+.box2 h3{
+    color: rgb(9, 49, 24);
 }
