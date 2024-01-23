@@ -1,0 +1,23 @@
+#ph{
+    color: purple;
+}
+body .box .graph{
+    color: blue;
+}
+.box > .graph{
+    
+}
+.box .graph{
+    color: yellow;
+}
+.graph{
+
+}
+p{
+    color: black !important;
+}
+p{
+    color: green;
+}
+
+

@@ -1,0 +1,73 @@
+/*Chung*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fafafa;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 1.35;
+
+}
+img{
+    max-width: 100%;
+
+}
+a{
+    text-decoration: none;
+    color: blueviolet;
+    transition: all 300ms;
+}
+a:hover{
+    color: rgb(94, 48, 137);
+
+}
+p{
+    margin-bottom: 10px;
+}
+
+/* layout */
+.section{
+    float: left;
+    width: 100%;
+
+}
+.container{
+    float: none;
+    width: 1200px;
+    margin: 0 auto;
+}
+.nav{
+    background-color: green;
+}
+.box-left{
+    float: left;
+    width: 75%;
+    padding-right: 15px;
+}
+.box-right{
+    float: left;
+    width: 25% ;
+    padding-left: 15px;
+    background-color: aquamarine;
+}
+.box-left .left-1-top{
+    float: left;
+    width: 66.67%;
+    padding-right: 15px;
+    background-color: rgb(21, 216, 216);
+    .box-left .left-1-bottom{
+
+    }
+}
+.box-left .box-left-2{
+    float: left;
+    width: 33.33%;
+    padding-left: 15px;
+    background-color: blanchedalmond;
+}
+
+
