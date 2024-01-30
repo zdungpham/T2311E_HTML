@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Js 4</title>
+</head>
+<body>
+    <input  onkeyup="demo2(this)" onkeydown="demo1(this)" type="text" name="fullname" placeholder="Enter..."/>
+    <input  onkeyup="demo2(this)" onkeydown="demo1(this)" type="text" name="email" placeholder="Enter..."/>
+    <select onchange="demo3(this)">
+        <option value="HN">HN</option>
+        <option value="SG">SG</option>
+        <option value="HP">HP</option>
+        <option value="BN">BN</option>
+    </select>
+    <script type="text/javascript">
+        //chi dung trong giao dien nay
+        
+        var ct = document.getElementById("slct");
+        function demo1(e){
+            console.log(e.name + ":" + e.value);
+        }
+        function demo2(e){
+            console.log(e.value);
+        }
+        function demo3(a){
+            alert(ct.value);
+        }
+    </script>
+</body>
+</html>

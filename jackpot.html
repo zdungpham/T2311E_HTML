@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <section class="section">
+    <div class="container">
+        <input class="ip" onkeyup="enterLuckyNumber(this)" name="number" type="number" placeholder="Enter your number"/>
+        <input class="ip" onkeyup="enterLuckyNumber(this)" name="number" type="number" placeholder="Enter your number"/>
+        <input class="ip" onkeyup="enterLuckyNumber(this)" name="number" type="number" placeholder="Enter your number"/>
+        <input class="ip" onkeyup="enterLuckyNumber(this)" name="number" type="number" placeholder="Enter your number"/>
+        <input class="ip" onkeyup="enterLuckyNumber(this)" name="number" type="number" placeholder="Enter your number"/>
+        <input class="ip" onkeyup="enterLuckyNumber(this)" name="number" type="number" placeholder="Enter your number"/>
+        <button onclick="runGame()" type="button">Run</button>
+        <p id="notification">Please enter yout number</p>
+
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <img style="border-radius: 100%;" id="lucky" src="images/loading.png" width="50px" height="50px"/>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <p id="result"></p>
+        <audio id="congrat">
+            <source src="sound/tada-fanfare-a-6313.mp3"/>
+        </audio>
+        <audio id="lose">
+            <source src="sound/fail-144746.mp3"/>
+        </audio>
+    </div>
+</section>
+<script text="javascript">
+    //code here
+    var valid = false;
+    var luckyNumber = [];
+    function enterLuckyNumber(e){
+        luckyNumber = [];
+        
+        var msg = document.getElementById("notification");
+        //array phai co 6 so, tu 0 den 45 va khong trung nhau
+        var ips = document.getElementsByClassName("ip"); //1 array cac element
+        for(var i=0; i<ips.length; i++){
+            var x = ips[i].value;
+            if(x>=0, i<=45 && !luckyNumber.includes(x) && x!=""){
+           luckyNumber.push(x);
+            }
+        }
+
+        if(luckyNumber.length == 6){
+            msg.innerText = "valid";
+            msg.style.color = "green";
+            valid = true;
+        } else {
+            msg.innerText = "Invalid";
+            msg.style.color = "red";
+            valid = false;
+        }   
+    }
+    var circle;
+    var dg=0;
+    function runGame(){
+        if(valid){
+            var img = document.getElementById("lucky");
+            circle = setInterval(function(){
+                if(dg == 360) dg = 0;
+                dg+=20;
+                img.style.transform = `rotate(${dg}deg)`;
+            },10);
+            setTimeout(function(){
+                clearInterval(circle);
+                var rd = [];
+                while(rd.length<6){
+                    var r =Math.random()*46;
+                    r = parseInt(rd);
+                    if(!rd.includes(r)){
+                        rd.push(r);
+                    }
+                }
+                
+                var kq = 0;
+                rd.forEach(r=>{
+                    if(luckyNumber.includes(r)){
+                        kq++;
+                    }
+                });
+                var result = document.getElementById("result");
+                switch(kq){
+                    case 5:{
+                        result.innerHTML = `<h1 style="color:green"> Chuc mung ban da trung giai Jackpot </h1>`;
+                        var congrat= document.getElementById("congrat");
+                    congrat.play();break;
+                    }
+                    case 4:{
+                        result.innerHTML = `<h1 style="color:green"> Chuc mung ban da trung nhat 100tr </h1>`;
+                        var congrat= document.getElementById("congrat");
+                    congrat.play();break;
+                    }
+                    case 3:{
+                        result.innerHTML = `<h1 style="color:green"> Chuc mung ban da trung giai 10tr </h1>`;
+                        var congrat= document.getElementById("congrat");
+                    congrat.play();break;
+                    }
+                    case 2:{
+                        result.innerHTML = `<h1 style="color:green"> Chuc mung ban may man lan sau </h1>`;
+                        var congrat= document.getElementById("congrat");
+                    congrat.play();break;
+                    }
+                    default:{
+
+                    }
+                }
+                result.innerHTML += `<h1 
+            },5000)
+        } else {
+            alert("Please enter correct number!")
+        }
+}
+</script>
+</body>
+</html>

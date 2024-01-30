@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="css/layout.css"/>
+</head>
+<body>
+    <section class="section">
+        <div id="w" class="container">
+            <input id="tp" onkeyup="enterCity(this)" name="thanhpho" type="text" placeholder="Thành phố"/>
+            <button onclick="changeCity()" type="button">Change</button>
+            <H1 id="cityname"> Tên thành phố</H1>
+            <h2> Nhiêt độ: <span id="tmp">20</span><sup>o</sup>C</h2>
+            <h2> Độ ẩm: <span id="hum">70</span>%</h2>
+            <h2> Áp suất: <span id="pre">1000</span></h2>
+        </div>
+    </section>
+    <script type="text/javascript">
+        var url;
+        //step 1 : call web API
+        // fetch(url).then(json=>json.json())
+        // .then(data=>{
+        //     //step 2: using JSON (Render data to UI/UX)
+        //     console.log(data);
+        //     document.getElementById("cityname").innerText = data.name;
+        //     document.getElementById("tmp").innerText = data.main.temp;
+        //     document.getElementById("hum").innerText = data.main.humidity;
+        //     document.getElementById("pre").innerText = data.main.pressure;
+            
+        // });
+        var city;
+        function enterCity(e){
+            city = e.value;
+        }
+        function changeCity(){
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=09a71427c59d38d6a34f89b47d75975c&units=metric`;
+            fetch(url).then(json=>json.json())
+        .then(data=>{
+            //step 2: using JSON (Render data to UI/UX)
+            console.log(data);
+            document.getElementById("cityname").innerText = data.name;
+            document.getElementById("tmp").innerText = data.main.temp;
+            document.getElementById("hum").innerText = data.main.humidity;
+            document.getElementById("pre").innerText = data.main.pressure;
+            
+        });
+        }
+    </script>
+</body>
+</html>

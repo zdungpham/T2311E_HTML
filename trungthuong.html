@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <section class="section">
+    <div class="container">
+        <input onkeyup="enterLuckyNumber(this)" name="number" type="number" placeholder="Enter your number"/>
+        <button onclick="runGame()" type="button">Run</button>
+        <p id="notification">Please enter yout number</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <img style="border-radius: 100%;" id="lucky" src="images/loading.png" width="50px" height="50px"/>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <p id="result"></p>
+        <audio id="congrat">
+            <source src="sound/tada-fanfare-a-6313.mp3"/>
+        </audio>
+        <audio id="lose">
+            <source src="sound/fail-144746.mp3"/>
+        </audio>
+    </div>
+</section>
+<script type="text/javascript">
+    //code here
+    var valid = false;
+    var luckyNumber;
+    function enterLuckyNumber(e){
+        luckyNumber = e.value;
+        
+        var msg = document.getElementById("notification")
+        if(luckyNumber>=0 && luckyNumber<=99){
+            msg.innerText = "valid";
+            msg.style.color = "green";
+            valid = true;
+        } else {
+            msg.innerText = "Invalid";
+            msg.style.color = "red";
+            valid = false;
+        }   
+    }
+    var circle;
+    var dg=0;
+    function runGame(){
+        if(valid){
+            var img = document.getElementById("lucky");
+            circle = setInterval(function(){
+                if(dg == 360) dg = 0;
+                dg+=20;
+                img.style.transform = `rotate(${dg}deg)`;
+            },10);
+            setTimeout(function(){
+                clearInterval(circle);
+                var rd =Math.random()*100;
+                rd = parseInt(rd);
+                var result = document.getElementById("result");
+                if(rd == luckyNumber){
+                    result.innerHTML = `<h1 style="color:green"> Chuc mung ban da trung giai </h1>`;
+                    var congrat= document.getElementById("congrat");
+                    congrat.play();
+                } else {
+                    result.innerHTML = `<h1 style="color:red">Chúc bạn may mắn lần sau</h1>`;
+                    var lose = document.getElementById("lose");
+                    lose.play();
+                }
+            },5000)
+        } else {
+            alert("Please enter correct number!")
+        }
+}
+</script>
+</body>
+</html>
