@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/layout.css"/>
+    <link rel="stylesheet" href="css/dubao.css"/>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <ul id="grid">
+                
+            </ul>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function loadWeather(){
+            var url = `https://api.openweathermap.org/data/2.5/forecast?q=Hanoi&appid=09a71427c59d38d6a34f89b47d75975c&units=metric`;
+            fetch(url).then(js=>js.json()).then(data=>{
+                //step 2
+                var list = data.list;
+                var weather_html = ``;
+                list.forEach(e => {
+                    var hour_html = `<li class="box">
+                    <div class="item">
+                        
+                        <h2>${e.dt_txt}</h2>
+                        <h2>${e.main.temp}<img src="https://openweathermap.org/img/wn/${e.weather.icon}@2x.png"/></h2>
+                        <h3>${e.weather.description}</h3>
+                    </div>
+                </li>`;
+
+                   weather_html+= hour_html;
+                });
+                document.getElementById("grid").innerHTML = weather_html;
+                });
+        }
+        loadWeather(); 
+        
+    </script>
+</body>
+</html>
