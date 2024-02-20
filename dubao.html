@@ -22,22 +22,51 @@
                 //step 2
                 var list = data.list;
                 var weather_html = ``;
-                list.forEach(e => {
-                    var hour_html = `<li class="box">
-                    <div class="item">
+                list.forEach(item => {
+                    item.weather.forEach(weatherItem => {
+                        var timestamp = Date.parse(item.dt_txt);
+                        console.log(timestamp);
+                        var date = new Date(timestamp);
+                        var day = date.getDate();
+                        day = formatDate(day);
+                        console.log(day);
+                        var month = date.getMonth();
+                        month = formatDate(month);
+                        var year = date.getFullYear();
+                        year = formatDate(year);
+                        var hour = date.getHours();
+                        hour = formatDate(hour);
+                        var minute = date.getMinutes();
+                        minute = formatDate(minute);
+                        var second = date.getSeconds();
+                        second = formatDate(second);
+                        var formated = day +"/"+ month +"/"+ year + "         "+ hour+":"+ minute +":"+ second;
+                        var hour_html = `<li class="box">
                         
-                        <h2>${e.dt_txt}</h2>
-                        <h2>${e.main.temp}<img src="https://openweathermap.org/img/wn/${e.weather.icon}@2x.png"/></h2>
-                        <h3>${e.weather.description}</h3>
-                    </div>
-                </li>`;
+                        <div class="item">
+                        <h2>${formated}</h2>
+                        <img src="https://openweathermap.org/img/wn/${weatherItem.icon}@2x.png"/></h2>
+                        <h2>${item.main.temp}<sup>o</sup>
+                        <h1>${weatherItem.main}</h1>
+                        <h3>${weatherItem.description}</h3>
+                        </div>
+                        </li>`;
 
-                   weather_html+= hour_html;
+                        weather_html+= hour_html;
+                    });
                 });
                 document.getElementById("grid").innerHTML = weather_html;
-                });
+            });
+        }
+        function formatDate(value){
+            if(value<10){
+                value = "0" + value;
+            }
+            return value;
         }
         loadWeather(); 
+
+
         
     </script>
 </body>
