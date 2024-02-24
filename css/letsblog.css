@@ -35,10 +35,11 @@ p{
 .container{
     float: left;
     padding: 20px 30px;
+    Margin: 20px 200px
 }
 .box-left{
     float: left;
-    width: 72%;
+    width: 60%;
 }
 
 #firstlook{
@@ -51,8 +52,10 @@ h5{
     float: left;
 }
 .main2cover{
+    display: grid;
+    grid-template-columns: auto auto;
     float: left;
-    width: 50%;
+    width: 100%;
 }
 .artlifestyle{
     max-width: 100%;
@@ -66,7 +69,7 @@ h5{
 .box-right{
     float: left;
     text-align: center;
-    width: 28%;
+    width: 20%;
 
 }
 .box-right img{
@@ -74,6 +77,7 @@ h5{
 }
 .aboutme{
     border: 1px solid black;
+    padding: 20px;
     margin-bottom: 20px;
 }
 .subscribe{
@@ -83,5 +87,20 @@ h5{
 }
 .btn{
     width: 230px;
-    margin: 5px 0;
+    margin: 20px 0;
+}
+.follow_me{
+    border: 1px solid black;
+    width: 100%;
+    margin: 20px 0;
+}
+.category{
+    width: 100%;
+    border: 1px solid silver;
+}
+
+li{
+    list-style: none;
+    text-align: left;
+    border-bottom: 1px solid silver;
 }
