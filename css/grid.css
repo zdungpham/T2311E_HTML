@@ -85,17 +85,16 @@
         position: relative;
     }
     .box-menu{
-        position:absolute;
+        position: absolute;
         top: 35px;
-        left: 20px;
+        left: 10px;
         background-color: #fff;
         z-index: 10;
     }
-    
     .box-menu li{
         float: left;
         width: 100%;
-        padding: 10px 5px;
-        border-bottom: 1px solid grey;
+        padding: 10px 15px;
+        border-bottom: 1px solid gray;
     }
 }
