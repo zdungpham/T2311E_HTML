@@ -1,0 +1,46 @@
+{
+    "Teacher":
+        {
+            "Name": "ABC",
+            "Age": 58,
+            "Subject": "History" 
+        },
+
+    "Student":[
+        {
+            "Name": "ABC",
+            "Age": 16,
+            "Grade": 10,
+            "Mark":[
+                {
+                    "name": "Math",
+                    "15m": 10,
+                    "45m": 6  
+                },
+                {
+                    "name":"History"
+                }
+                    ]
+        },
+        {
+            "Name": "XYZ",
+            "Age": 16,
+            "Grade": 10,
+            "Mark":[
+                {
+                    "name": "Math",
+                    "15m": 9,
+                    "45m": 7  
+                },
+                {
+                    "name":"History",
+                    "15m":4,
+                    "end": 2
+                }
+            ]
+
+            
+        }
+    ]
+}
+
